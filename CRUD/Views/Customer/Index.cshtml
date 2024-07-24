@@ -1,5 +1,14 @@
 ﻿@model List<Customer>
 
+@if (TempData["success"] != null)
+
+{
+
+    <div class="alert alert-success">
+        <h2>@TempData["success"]</h2>
+    </div>
+    
+}
 
 
 
