@@ -8,5 +8,7 @@ namespace CRUD.Models
         {
 
         }
+
+        public DbSet <Customer> Customers { get; set; }
     }
 }
