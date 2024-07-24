@@ -13,7 +13,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var c in Model)
+        @foreach (var c in Model.OrderBy ( x => x.Id).Reverse())
         {
             <tr>
                 <td>@c.Id</td>
