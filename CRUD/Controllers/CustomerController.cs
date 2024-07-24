@@ -18,5 +18,19 @@ namespace CRUD.Controllers
             
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Create(Customer customer)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Customers.Add(customer);
+                _db.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+
+            return View();
+        }
     }
 }
