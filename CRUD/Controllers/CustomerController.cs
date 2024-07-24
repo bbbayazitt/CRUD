@@ -12,5 +12,11 @@ namespace CRUD.Controllers
             List<Customer> customers = _db.Customers.ToList();
             return View(customers);
         }
+
+        public IActionResult Create()
+        {
+            
+            return View();
+        }
     }
 }
