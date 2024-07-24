@@ -31,6 +31,9 @@ namespace CRUD.Controllers
                 _db.Customers.Add(customer);
                 _db.SaveChanges();
 
+                
+               TempData["success"] = "Customer created succesfully";
+
                 return RedirectToAction("Index");
             }
 
@@ -58,8 +61,10 @@ namespace CRUD.Controllers
             }
             if (ModelState.IsValid)
             {
-                _db.Customers.Add(customer);
+                _db.Customers.Update(customer);
                 _db.SaveChanges();
+
+                TempData["success"] = "Customer edited succesfully";
 
                 return RedirectToAction("Index");
             }
@@ -67,5 +72,25 @@ namespace CRUD.Controllers
             return View();
 
         }
+
+        public IActionResult Delete(int? id)
+        {
+
+            Customer? customer = _db.Customers.Find(id);
+            if (id == null || id == 0 || customer == null)
+            {
+                return NotFound();
+            }
+            
+            _db.Customers.Remove(customer);
+            _db.SaveChanges();
+
+            TempData["success"] = "Customer deleted succesfully";
+
+            return RedirectToAction("Index");
+
+        }
+
+
     }
 }
