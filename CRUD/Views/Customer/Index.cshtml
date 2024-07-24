@@ -1,1 +1,26 @@
-﻿<h1>Customer List</h1>
+﻿@model List<Customer>
+
+
+<h1>Customer List</h1>
+
+<table class = "table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Id</td>
+                <td>@c.FirstName</td>
+                <td>@c.LastName</td>
+                <td>@c.Email</td>
+            </tr>
+        }
+    </tbody>
+</table>
