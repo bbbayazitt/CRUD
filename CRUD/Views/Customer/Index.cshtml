@@ -31,6 +31,11 @@
                 <td>@c.FirstName</td>
                 <td>@c.LastName</td>
                 <td>@c.Email</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id = "@c.Id" class="btn btn-dark">Edit</a>
+                    <a asp-action="Delete" asp-route-id = "@c.Id" class="btn btn-danger">Edit</a>
+
+                </td>
             </tr>
         }
     </tbody>
